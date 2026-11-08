@@ -12,9 +12,12 @@ import { readFile, writeFile, mkdir } from "node:fs/promises";
 const NAVY = "#0a2241";
 const BLUE = "#0752bc";
 const GREEN = "#55a338";
+// Each code encodes a Mercury CRM (XBeton location) dynamic short link, so every scan is
+// counted in CRM > Marketing > QR Codes > "Alania Energy" folder, then redirected to the site.
+// Change the destination in the CRM any time without reprinting.
 const targets = [
-  ["qr-alaniaenergy-home", "https://alaniaenergy.com/", "alaniaenergy.com"],
-  ["qr-alaniaenergy-investors", "https://alaniaenergy.com/investors", "alaniaenergy.com/investors"],
+  ["qr-alaniaenergy-home", "https://login.mercurycalldesk.com/q/jUVBkvfX5", "alaniaenergy.com"],
+  ["qr-alaniaenergy-investors", "https://login.mercurycalldesk.com/q/CoiCpy4mF", "alaniaenergy.com/investors"],
 ];
 
 await mkdir("assets/qr", { recursive: true });

@@ -51,8 +51,14 @@ BASE_URL=https://<deployment> ACCESS_CODE=... DATABASE_URL=... EXPECTED_PDF_BYTE
 Overwrite the PDF and/or PPTX in `private/`, update `bytes`, `sizeLabel`, `pages`, `dated` (and `HIGHLIGHTS` if figures changed) in `lib/brochure.ts`, commit, push.
 
 ## QR codes
-`npm run qr` regenerates `assets/qr/*.png|svg` for `https://alaniaenergy.com/` and `https://alaniaenergy.com/investors`.
-They only scan to something once DNS for alaniaenergy.com points at Vercel.
+The printed codes are **tracked by the Mercury CRM** (XBeton location > Marketing > QR Codes > folder "Alania Energy"):
+| Code | CRM short link | Destination |
+|---|---|---|
+| Alania Energy - Website Home | https://login.mercurycalldesk.com/q/jUVBkvfX5 | https://alaniaenergy.com/ |
+| Alania Energy - Investor Briefing | https://login.mercurycalldesk.com/q/CoiCpy4mF | https://alaniaenergy.com/investors |
+
+`npm run qr` draws the branded versions (navy dots, green eyes, Alania mark, caption) of those CRM short links into `assets/qr/*.png|svg`.
+Scans, last scan and destination are managed in the CRM; change a destination there without reprinting.
 
 ## Domain and email
 1. In Vercel, project Domains: add `alaniaenergy.com` and `www.alaniaenergy.com`; copy the exact A / CNAME values Vercel shows and set them at the registrar.
