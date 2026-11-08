@@ -11,7 +11,7 @@ import { readFile, writeFile, mkdir } from "node:fs/promises";
 
 const NAVY = "#0a2241";
 const BLUE = "#0752bc";
-const GREEN = "#55a338";
+const GREEN = "#3f8a2a"; // darker than brand #55a338 so every QR decoder reads the finder eyes
 // Each code encodes a Mercury CRM (XBeton location) dynamic short link, so every scan is
 // counted in CRM > Marketing > QR Codes > "Alania Energy" folder, then redirected to the site.
 // Change the destination in the CRM any time without reprinting.
@@ -49,7 +49,7 @@ function build(url, caption) {
       if (!qr.modules.get(r, c) || inFinder(r, c) || inPlate(r, c)) continue;
       const x = quiet + c * cell + cell / 2;
       const y = quiet + r * cell + cell / 2;
-      dots += `<circle cx="${x}" cy="${y}" r="${cell * 0.46}"/>`;
+      dots += `<rect x="${x - cell * 0.47}" y="${y - cell * 0.47}" width="${cell * 0.94}" height="${cell * 0.94}" rx="${cell * 0.28}"/>`;
     }
   }
 
@@ -81,6 +81,6 @@ ${eye(0, 0)}${eye(0, n - 7)}${eye(n - 7, 0)}
 for (const [name, url, caption] of targets) {
   const svg = build(url, caption);
   await writeFile(`assets/qr/${name}.svg`, svg);
-  await sharp(Buffer.from(svg)).resize({ width: 1600 }).png().toFile(`assets/qr/${name}.png`);
+  await sharp(Buffer.from(svg)).resize({ width: 1600 }).flatten({ background: "#ffffff" }).png().toFile(`assets/qr/${name}.png`);
   console.log(name, "->", url);
 }
