@@ -77,6 +77,11 @@ function Locked({ error }: { error?: string }) {
           <p className="mt-3 text-ink/75">
             This material is confidential and intended for invited parties. Enter the access code you were given.
           </p>
+          <p className="mt-2 text-sm text-ink/60">
+            By unlocking, you agree to the confidentiality terms in our{" "}
+            <a className="underline" href="/terms#s5">Terms of Use</a>. Access is logged as described in our{" "}
+            <a className="underline" href="/privacy">Privacy Policy</a>.
+          </p>
           <form action="/api/brochure/unlock" method="post" className="mt-6">
             <label htmlFor="code" className="sr-only">Access code</label>
             <input

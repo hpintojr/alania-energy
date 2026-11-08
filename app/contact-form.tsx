@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { CONTACT_EMAIL } from "./components";
 import { INTERESTS } from "@/lib/contact";
 
@@ -71,7 +72,7 @@ export function ContactForm({ page, sent, error }: { page: string; sent?: boolea
       </div>
       <label className="flex items-start gap-3 text-sm text-ink/75 sm:col-span-2">
         <input type="checkbox" name="consent" value="yes" required className="mt-1 h-4 w-4 accent-[#0752bc]" />
-        <span>I agree that Alania Energy may contact me about my inquiry by email or phone.</span>
+        <span>I agree that Alania Energy may contact me about my inquiry by email or phone, as described in the{" "}<Link href="/privacy" className="underline">Privacy Policy</Link>.</span>
       </label>
       <div className="sm:col-span-2">
         <button type="submit" className="btn btn-navy w-full sm:w-auto">Send message</button>

@@ -94,7 +94,11 @@ export function Footer() {
           timing are forward-looking and may change. Nothing on this site is an offer to sell or a solicitation of an offer
           to buy securities.
         </p>
-        <p>© 2026 Alania Energy. All rights reserved.</p>
+        <p className="flex flex-wrap gap-x-5 gap-y-2">
+          <span>© 2026 Alania Energy. All rights reserved.</span>
+          <Link href="/privacy" className="hover:text-white">Privacy Policy</Link>
+          <Link href="/terms" className="hover:text-white">Terms of Use</Link>
+        </p>
       </div>
     </footer>
   );
