@@ -274,6 +274,50 @@ def data_centers():
     return svg("".join(p), "Line drawing of a data center hall with racks and cooling")
 
 
+# ---------------------------------------------------------------- green technology
+def green_technology():
+    p = []
+    gy = 530
+    p.append(ground(gy))
+    # AAC block building (running-bond courses)
+    bx, by, bw, bh = 90, 300, 330, 230
+    p.append(g(f'<path d="M{bx} {gy} V{by} H{bx+bw} V{gy}"/><path d="M{bx-12} {by} L{bx+bw/2} {by-70} L{bx+bw+12} {by}"/>', LINE, 1.8))
+    rows = ""
+    for i, y in enumerate(range(by + 26, gy, 26)):
+        rows += f'<path d="M{bx} {y} H{bx+bw}"/>'
+        off = 0 if i % 2 == 0 else 33
+        rows += "".join(f'<path d="M{x} {y-26} V{y}"/>' for x in range(bx + 66 - off, bx + bw, 66))
+    p.append(g(rows, SOFT, 1, 0.75))
+    p.append(g(f'<rect x="{bx+130}" y="{gy-80}" width="70" height="80" fill="#0a2241"/><path d="M{bx+165} {gy-80} V{gy}"/>', LINE, 1.5))
+    # leaf on roof
+    p.append(g(f'<path d="M{bx+bw/2} {by-90} C{bx+bw/2-50} {by-120} {bx+bw/2-40} {by-190} {bx+bw/2+30} {by-200} C{bx+bw/2+50} {by-140} {bx+bw/2+30} {by-100} {bx+bw/2} {by-90} Z"/>'
+               f'<path d="M{bx+bw/2} {by-90} C{bx+bw/2+5} {by-130} {bx+bw/2+15} {by-165} {bx+bw/2+30} {by-200}"/>', GREEN, 1.8))
+    # stack with capture unit
+    sx = 520
+    p.append(g(f'<rect x="{sx}" y="380" width="120" height="150" rx="4"/><path d="M{sx+30} 380 V250 M{sx+52} 380 V250 M{sx+27} 250 H{sx+55}"/>'
+               f'<rect x="{sx+80}" y="260" width="70" height="120" rx="8"/><path d="M{sx+52} 300 H{sx+80}"/><path d="M{sx+95} 290 h40 M{sx+95} 310 h40 M{sx+95} 330 h40" opacity="0.6"/>', LINE, 1.6))
+    # CO2 molecule + arrow into capture
+    p.append(g(f'<circle cx="{sx+40}" cy="190" r="13"/><circle cx="{sx+10}" cy="190" r="9"/><circle cx="{sx+70}" cy="190" r="9"/><path d="M{sx+19} 190 h8 M{sx+53} 190 h8"/>', LINE, 1.4))
+    p.append(label(sx + 40, 168, "CO2", "middle"))
+    p.append(g(f'<path d="M{sx+85} 195 C{sx+120} 200 {sx+130} 230 {sx+120} 255"/><path d="M{sx+112} 246 l8 10 l6 -12"/>', GREEN, 1.8))
+    # nanocarbon hexagon lattice
+    hx, hy, r = 760, 170, 22
+    hexes = ""
+    for row in range(3):
+        for col in range(3):
+            cx = hx + col * r * 1.75 + (r * 0.875 if row % 2 else 0)
+            cy = hy + row * r * 1.5
+            pts = " ".join(f"{cx + r*math.cos(math.radians(60*k+30)):.1f},{cy + r*math.sin(math.radians(60*k+30)):.1f}" for k in range(6))
+            hexes += f'<polygon points="{pts}"/>'
+    p.append(g(hexes, GREEN, 1.4))
+    p.append(g(f'<path d="M790 270 V420"/><path d="M782 410 l8 12 l8 -12"/><rect x="745" y="430" width="90" height="100" rx="4"/>'
+               + "".join(f'<path d="M745 {y} H835"/>' for y in (455, 480, 505)), LINE, 1.4))
+    p.append(label(255, 560, "AAC GREEN BUILDING", "middle"))
+    p.append(label(600, 560, "CARBON CAPTURE", "middle"))
+    p.append(label(790, 140, "NANOCARBON", "middle"))
+    return svg("".join(p), "Line drawing of a green AAC building, carbon capture and nanocarbon materials")
+
+
 ART = {
     "turbine": turbine,
     "natural-gas": natural_gas,
@@ -281,6 +325,7 @@ ART = {
     "technology": technology,
     "campus": campus,
     "data-centers": data_centers,
+    "green-technology": green_technology,
 }
 for name, fn in ART.items():
     path = os.path.join(OUT, f"{name}.svg")

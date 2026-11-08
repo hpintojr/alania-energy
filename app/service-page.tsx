@@ -17,7 +17,7 @@ export function ServicePage({ c }: { c: ServiceContent }) {
   return (
     <>
       <Header onDark />
-      <main>
+      <main id="main" tabIndex={-1}>
         {/* Hero */}
         <section className="relative overflow-hidden bg-navy text-white">
           <div className="grid-lines absolute inset-0" aria-hidden />
@@ -107,7 +107,7 @@ export function ServicePage({ c }: { c: ServiceContent }) {
         </section>
 
         {c.footnote && (
-          <p className="mx-auto max-w-6xl px-4 py-6 text-xs text-ink/55 sm:px-6">{c.footnote}</p>
+          <p className="mx-auto max-w-6xl px-4 py-6 text-xs text-ink/70 sm:px-6">{c.footnote}</p>
         )}
       </main>
       <Footer />

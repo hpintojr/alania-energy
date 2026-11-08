@@ -16,14 +16,14 @@ export function LegalPage({
   return (
     <>
       <Header />
-      <main className="bg-white">
+      <main id="main" tabIndex={-1} className="bg-white">
         <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6 sm:py-20">
           <p className="eyebrow text-brand-blue">Legal</p>
           <h1 className="mt-3 text-4xl font-extrabold">{title}</h1>
-          <p className="mt-3 text-sm text-ink/60">Effective {effective}</p>
+          <p className="mt-3 text-sm text-ink/70">Effective {effective}</p>
           <p className="mt-8 text-lg leading-relaxed text-ink/80">{intro}</p>
           <nav aria-label="On this page" className="mt-8 rounded-lg border border-line bg-mist p-5">
-            <p className="eyebrow text-ink/50">On this page</p>
+            <p className="eyebrow text-ink/70">On this page</p>
             <ol className="mt-3 grid gap-1.5 text-[15px] sm:grid-cols-2">
               {sections.map((s, i) => (
                 <li key={s.heading}>

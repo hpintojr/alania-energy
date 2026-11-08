@@ -50,7 +50,7 @@ function Locked({ error }: { error?: string }) {
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-2 lg:items-start">
         {/* Teaser */}
         <div>
-          <p className="eyebrow text-brand-green">Investor Briefing</p>
+          <p className="eyebrow text-green-ink">Investor Briefing</p>
           <h1 className="mt-3 text-3xl font-extrabold leading-tight sm:text-4xl">
             {BROCHURE.title}
             <span className="block text-xl font-semibold text-ink/65 sm:text-2xl">{BROCHURE.subtitle}</span>
@@ -59,7 +59,7 @@ function Locked({ error }: { error?: string }) {
             A {BROCHURE.pages}-page briefing on the Cedar City Energy Campus, a private ownership platform for scaled
             energy infrastructure and data-center growth in Cedar City, Utah.
           </p>
-          <p className="mt-8 eyebrow text-ink/50">What&apos;s inside</p>
+          <p className="mt-8 eyebrow text-ink/70">What&apos;s inside</p>
           <ol className="mt-4 grid gap-x-6 gap-y-3 sm:grid-cols-2">
             {DECK_CONTENTS.map((t, i) => (
               <li key={t} className="flex items-baseline gap-3 text-ink/80">
@@ -68,7 +68,7 @@ function Locked({ error }: { error?: string }) {
               </li>
             ))}
           </ol>
-          <p className="mt-8 text-sm text-ink/60">Available as PDF or PowerPoint once unlocked.</p>
+          <p className="mt-8 text-sm text-ink/70">Available as PDF or PowerPoint once unlocked.</p>
         </div>
 
         {/* Gate */}
@@ -77,7 +77,7 @@ function Locked({ error }: { error?: string }) {
           <p className="mt-3 text-ink/75">
             This material is confidential and intended for invited parties. Enter the access code you were given.
           </p>
-          <p className="mt-2 text-sm text-ink/60">
+          <p className="mt-2 text-sm text-ink/70">
             By unlocking, you agree to the confidentiality terms in our{" "}
             <a className="underline" href="/terms#s5">Terms of Use</a>. Access is logged as described in our{" "}
             <a className="underline" href="/privacy">Privacy Policy</a>.
@@ -99,7 +99,7 @@ function Locked({ error }: { error?: string }) {
             <button type="submit" className="btn btn-navy mt-4 w-full">Unlock briefing</button>
           </form>
           <Message error={error} />
-          <p className="mt-8 text-center text-sm text-ink/60">
+          <p className="mt-8 text-center text-sm text-ink/70">
             Need access? <a className="underline" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
           </p>
         </div>
@@ -159,7 +159,7 @@ function Unlocked() {
                 {h.milestones.map((m) => (
                   <tr key={m.item} className="border-b border-line last:border-0">
                     <th scope="row" className="px-4 py-3 font-semibold">{m.item}</th>
-                    <td className="px-4 py-3 text-right font-semibold text-brand-green">{m.status}</td>
+                    <td className="px-4 py-3 text-right font-semibold text-green-ink">{m.status}</td>
                   </tr>
                 ))}
               </tbody>
@@ -202,7 +202,7 @@ function Unlocked() {
             <ol className="mt-6 space-y-3">
               {h.nextSteps.map((s, i) => (
                 <li key={s} className="flex items-center gap-4">
-                  <span className="display flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-green font-bold">{i + 1}</span>
+                  <span className="display flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-green-ink font-bold">{i + 1}</span>
                   {s}
                 </li>
               ))}
@@ -224,7 +224,7 @@ function Unlocked() {
         </div>
       </section>
 
-      <p className="mx-auto max-w-6xl px-4 py-6 text-xs leading-relaxed text-ink/55 sm:px-6">
+      <p className="mx-auto max-w-6xl px-4 py-6 text-xs leading-relaxed text-ink/70 sm:px-6">
         Highlights are summarized from the briefing dated {BROCHURE.dated} and are subject to change. This material is
         confidential and is not an offer to sell or a solicitation of an offer to buy securities.
       </p>
@@ -244,7 +244,7 @@ export default async function InvestorsPage({
   return (
     <>
       <Header />
-      <main>{unlocked ? <Unlocked /> : <Locked error={error} />}</main>
+      <main id="main" tabIndex={-1}>{unlocked ? <Unlocked /> : <Locked error={error} />}</main>
       <Footer />
     </>
   );

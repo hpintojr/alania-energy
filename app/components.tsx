@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CookiePreferencesLink } from "./cookie-banner";
 
 export const SERVICES = [
   { href: "/natural-gas", label: "Natural Gas" },
@@ -6,6 +7,7 @@ export const SERVICES = [
   { href: "/technology", label: "Technology" },
   { href: "/campus", label: "Campus" },
   { href: "/data-centers", label: "Data Centers" },
+  { href: "/green-technology", label: "Green Tech" },
 ] as const;
 
 export const CONTACT_EMAIL = "info@alaniaenergy.com";
@@ -71,7 +73,7 @@ export function Footer() {
           </p>
         </div>
         <div>
-          <p className="eyebrow text-white/50">What we do</p>
+          <p className="eyebrow text-white/70">What we do</p>
           <ul className="mt-4 space-y-2 text-sm text-white/80">
             {SERVICES.map((s) => (
               <li key={s.href}><Link href={s.href} className="hover:text-white">{s.label}</Link></li>
@@ -79,7 +81,7 @@ export function Footer() {
           </ul>
         </div>
         <div>
-          <p className="eyebrow text-white/50">Company</p>
+          <p className="eyebrow text-white/70">Company</p>
           <ul className="mt-4 space-y-2 text-sm text-white/80">
             <li><Link href="/" className="hover:text-white">Home</Link></li>
             <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
@@ -88,7 +90,7 @@ export function Footer() {
           </ul>
         </div>
       </div>
-      <div className="mx-auto max-w-6xl space-y-3 px-4 pb-8 text-xs leading-relaxed text-white/50 sm:px-6">
+      <div className="mx-auto max-w-6xl space-y-3 px-4 pb-8 text-xs leading-relaxed text-white/70 sm:px-6">
         <p>
           The Cedar City Energy Campus is in development. Statements on this site about planned facilities, technology and
           timing are forward-looking and may change. Nothing on this site is an offer to sell or a solicitation of an offer
@@ -96,9 +98,11 @@ export function Footer() {
         </p>
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-5">
           <span>© 2026 Alania Energy. All rights reserved.</span>
-          <span className="flex gap-5">
+          <span className="flex flex-wrap gap-x-5 gap-y-2">
             <Link href="/privacy" className="hover:text-white">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-white">Terms of Use</Link>
+            <Link href="/accessibility" className="hover:text-white">Accessibility</Link>
+            <CookiePreferencesLink className="underline-offset-4 hover:text-white hover:underline" />
           </span>
         </div>
       </div>

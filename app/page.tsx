@@ -18,7 +18,7 @@ const CAPABILITIES = [
   {
     title: "Nuclear",
     href: "/nuclear",
-    body: "Advanced nuclear as a long-term, carbon-free component of the campus generation mix.",
+    body: "Advanced nuclear as the long-term green power source in the campus generation mix.",
     icon: (
       <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
         <circle cx="12" cy="12" r="2" />
@@ -54,7 +54,7 @@ export default async function HomePage({
   return (
     <>
       <Header onDark />
-      <main>
+      <main id="main" tabIndex={-1}>
         {/* Hero */}
         <section className="relative overflow-hidden bg-navy text-white">
           <div className="grid-lines absolute inset-0" aria-hidden />
@@ -104,11 +104,41 @@ export default async function HomePage({
           </div>
         </section>
 
+        {/* Green */}
+        <section className="relative overflow-hidden bg-navy text-white">
+          <div className="grid-lines absolute inset-0" aria-hidden />
+          <div className="relative mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-2 lg:items-center">
+            <div>
+              <p className="eyebrow text-brand-green">Green Technology</p>
+              <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Green by design.</h2>
+              <p className="mt-5 text-lg leading-relaxed text-white/80">
+                The Cedar City Energy Campus is being developed around green technology: green buildings, a green data
+                center, and planned carbon capture and waste-to-nanocarbon processes designed to reduce carbon and lock it away.
+              </p>
+              <Link href="/green-technology" className="btn btn-primary mt-8">Explore green technology</Link>
+            </div>
+            <ul className="grid gap-4 sm:grid-cols-2">
+              {[
+                ["Green buildings", "Planned with insulating XBeton AAC block."],
+                ["Green data center", "AAC data halls with power generated on site."],
+                ["Carbon capture", "Planned to remove CO2 from generation exhaust."],
+                ["Waste to nanocarbon", "Carbon locked into durable building materials."],
+              ].map(([t, b]) => (
+                <li key={t} className="rounded-lg border border-white/10 bg-white/5 p-5">
+                  <span className="block h-1 w-10 rounded-full bg-brand-green" aria-hidden />
+                  <p className="mt-3 font-bold">{t}</p>
+                  <p className="mt-1 text-[15px] leading-relaxed text-white/75">{b}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
         {/* Campus */}
         <section className="bg-mist">
           <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 sm:py-24 md:grid-cols-5 md:items-center">
             <div className="md:col-span-3">
-              <p className="eyebrow text-brand-green">Now in development</p>
+              <p className="eyebrow text-green-ink">Now in development</p>
               <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Cedar City Energy Campus</h2>
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink/80">
                 An energy campus in Cedar City, Utah, designed to serve next-generation data-center and

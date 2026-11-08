@@ -2,10 +2,11 @@ import type { ServiceContent } from "@/app/service-page";
 
 const R = {
   gas: { href: "/natural-gas", label: "Natural Gas", blurb: "Firm, dispatchable generation that anchors the campus." },
-  nuclear: { href: "/nuclear", label: "Nuclear", blurb: "The long-term, carbon-free part of the generation mix." },
+  nuclear: { href: "/nuclear", label: "Nuclear", blurb: "The long-term green power source in the generation mix." },
   tech: { href: "/technology", label: "Turbine Technology", blurb: "The proven GE turbine platform our gas generation is designed around." },
   campus: { href: "/campus", label: "Cedar City Energy Campus", blurb: "Generation built next to the loads it serves." },
   dc: { href: "/data-centers", label: "Data Centers", blurb: "Dedicated, always-on power for data-center scale." },
+  green: { href: "/green-technology", label: "Green Technology", blurb: "Green buildings, a green data center and planned carbon capture." },
 };
 
 export const NATURAL_GAS: ServiceContent = {
@@ -58,11 +59,11 @@ export const NATURAL_GAS: ServiceContent = {
 export const NUCLEAR: ServiceContent = {
   art: "/art/nuclear.svg",
   eyebrow: "Nuclear",
-  title: "Long-term, carbon-free power.",
+  title: "Long-term green power.",
   intro:
     "Nuclear energy is part of Alania Energy's long-term plan for the Cedar City Energy Campus: a source of large-scale electricity that produces no carbon emissions while it operates and runs around the clock.",
   points: [
-    { title: "Carbon-free operation", body: "Nuclear plants produce electricity without burning fuel, so they emit no carbon dioxide while operating." },
+    { title: "Green operation", body: "Nuclear plants produce electricity without burning fuel, so they emit no carbon dioxide while operating." },
     { title: "Always on", body: "Nuclear units typically run at full output for long stretches between refueling outages." },
     { title: "Compact footprint", body: "A nuclear plant produces a large amount of power from a relatively small area of land." },
     { title: "Long asset life", body: "Nuclear facilities are designed to operate for decades." },
@@ -89,7 +90,7 @@ export const NUCLEAR: ServiceContent = {
       ],
       bullets: [
         { title: "Near term", body: "Planned natural gas generation is intended to deliver firm, dispatchable power." },
-        { title: "Long term", body: "Advanced nuclear adds carbon-free, around-the-clock capacity." },
+        { title: "Long term", body: "Advanced nuclear adds green, around-the-clock capacity." },
       ],
     },
     {
@@ -101,7 +102,7 @@ export const NUCLEAR: ServiceContent = {
   ],
   related: [R.gas, R.campus, R.dc],
   cta: {
-    title: "Interested in carbon-free capacity?",
+    title: "Interested in green capacity?",
     body: "Reach out to discuss long-term power needs and the role of nuclear on the campus.",
   },
 };
@@ -201,7 +202,7 @@ export const CAMPUS: ServiceContent = {
       ],
     },
   ],
-  related: [R.dc, R.gas, R.nuclear],
+  related: [R.green, R.dc, R.gas],
   cta: {
     title: "Explore the campus with us.",
     body: "Contact us to discuss locating on the campus.",
@@ -217,7 +218,7 @@ export const DATA_CENTERS: ServiceContent = {
   points: [
     { title: "Dedicated supply", body: "Generation planned on the same campus as your facility." },
     { title: "Always-on power", body: "Firm natural gas generation designed to run around the clock." },
-    { title: "Lower-carbon path", body: "Advanced nuclear planned as the long-term, carbon-free addition." },
+    { title: "Green by design", body: "Green buildings, planned carbon capture and advanced nuclear over the long term." },
     { title: "Planned infrastructure", body: "Power, water, gas, fiber and rail planned for the site." },
   ],
   sections: [
@@ -236,8 +237,14 @@ export const DATA_CENTERS: ServiceContent = {
       bullets: [
         { title: "Power where you build", body: "Campus generation is planned to serve campus customers, reducing reliance on distant transmission." },
         { title: "Firm in the near term", body: "Planned natural gas generation, designed around GE turbine technology, is intended to provide around-the-clock supply." },
-        { title: "Cleaner tomorrow", body: "Advanced nuclear is planned as the long-term, carbon-free addition." },
+        { title: "Greener over time", body: "Planned carbon capture now and advanced nuclear over the long term." },
         { title: "Room to expand", body: "The campus is planned to add generation as customer demand grows." },
+      ],
+    },
+    {
+      heading: "A green data center",
+      paras: [
+        "Data halls on the campus are planned to be built with insulating XBeton AAC block to reduce cooling demand, powered on site, and supported by planned carbon capture and, over the long term, advanced nuclear.",
       ],
     },
     {
@@ -253,9 +260,77 @@ export const DATA_CENTERS: ServiceContent = {
       ],
     },
   ],
-  related: [R.campus, R.gas, R.nuclear],
+  related: [R.green, R.campus, R.gas],
   cta: {
     title: "Planning a data center?",
     body: "Email us your load requirements and timeline to start the conversation.",
   },
+};
+
+export const GREEN: ServiceContent = {
+  art: "/art/green-technology.svg",
+  eyebrow: "Green Technology",
+  title: "Green by design.",
+  intro:
+    "Alania Energy is developing the Cedar City Energy Campus around green technology: green buildings, a green data center, and planned carbon capture and waste-to-nanocarbon processes designed to reduce carbon and lock it away.",
+  points: [
+    { title: "Green buildings", body: "Campus buildings planned with XBeton autoclaved aerated concrete (AAC) block." },
+    { title: "Green data center", body: "Data halls planned with AAC construction, on-site power and a greener energy mix." },
+    { title: "Carbon capture", body: "Natural gas generation planned with carbon capture to remove CO2 from exhaust." },
+    { title: "Waste to nanocarbon", body: "A planned process that turns waste into nanocarbon locked into building materials." },
+  ],
+  sections: [
+    {
+      heading: "Green buildings",
+      paras: [
+        "Campus buildings, including the data halls, are planned to be built with XBeton autoclaved aerated concrete (AAC) block. AAC is a lightweight, insulating masonry material: its air-filled structure helps keep buildings cooler in summer and warmer in winter, which reduces the energy needed for heating and cooling. It is also non-combustible.",
+        "Alania Energy plans to pursue recognized green-building certification, such as LEED, for campus buildings as the design advances. The campus has not yet been certified.",
+      ],
+      bullets: [
+        { title: "Insulating", body: "AAC's cellular structure reduces heating and cooling loads." },
+        { title: "Lightweight", body: "Less material by volume than conventional poured concrete." },
+        { title: "Fire resistant", body: "AAC is a non-combustible building material." },
+        { title: "Certification", body: "Recognized green-building certification, such as LEED, is planned." },
+      ],
+    },
+    {
+      heading: "A green data center",
+      paras: [
+        "The campus is being designed as a green data center campus. Data halls are planned with AAC construction to reduce cooling demand, and power is planned to be generated on site, reducing reliance on long-distance transmission.",
+        "Over time, the energy mix is planned to become greener still: carbon capture on natural gas generation in the nearer term, and advanced nuclear as the long-term green power source.",
+      ],
+      bullets: [
+        { title: "Efficient shell", body: "Insulating AAC buildings to help reduce cooling energy." },
+        { title: "Power on site", body: "Generation planned next to the data halls it serves." },
+        { title: "Captured carbon", body: "Carbon capture planned on natural gas generation." },
+        { title: "Green over time", body: "Advanced nuclear planned as the long-term power source." },
+      ],
+    },
+    {
+      heading: "Removing carbon",
+      paras: [
+        "Natural gas generation on the campus is planned with carbon capture equipment, designed to separate carbon dioxide from plant exhaust so it is captured rather than released to the atmosphere.",
+        "Alania Energy also plans a waste-to-nanocarbon process that converts waste streams into nanocarbon materials. Used in building products, that carbon is locked into long-lasting materials instead of entering the air.",
+      ],
+      bullets: [
+        { title: "Capture", body: "CO2 separated from generation exhaust, as planned." },
+        { title: "Convert", body: "Waste converted into nanocarbon materials, as planned." },
+        { title: "Lock away", body: "Carbon held in durable building products." },
+        { title: "Report", body: "Performance details will be shared as systems come online." },
+      ],
+    },
+    {
+      heading: "Our commitment",
+      paras: [
+        "The campus is in development, and the green technologies described here are planned. As design, permitting and construction advance, we will share specific details on certification, capture performance and materials so our green claims can be verified.",
+      ],
+    },
+  ],
+  related: [R.dc, R.campus, R.gas],
+  cta: {
+    title: "Building something green?",
+    body: "Talk with us about green power and green buildings for your project.",
+  },
+  footnote:
+    "XBeton is referenced as the planned supplier of AAC building block. All green technologies described on this page are planned and subject to design, permitting and change.",
 };

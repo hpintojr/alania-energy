@@ -19,7 +19,7 @@ export default async function ContactPage({
   return (
     <>
       <Header onDark />
-      <main>
+      <main id="main" tabIndex={-1}>
         <section className="relative overflow-hidden bg-navy text-white">
           <div className="grid-lines absolute inset-0" aria-hidden />
           <div className="relative mx-auto max-w-6xl px-4 pb-14 pt-14 sm:px-6 sm:pt-20">
@@ -35,16 +35,16 @@ export default async function ContactPage({
           <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-3">
             <div className="space-y-8 text-ink/80">
               <div>
-                <p className="eyebrow text-ink/50">Email</p>
+                <p className="eyebrow text-ink/70">Email</p>
                 <a className="mt-2 block break-all font-semibold underline" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
               </div>
               <div>
-                <p className="eyebrow text-ink/50">Location</p>
+                <p className="eyebrow text-ink/70">Location</p>
                 <p className="mt-2 font-semibold">Cedar City, Utah</p>
                 <p className="mt-1 text-sm">Home of the Cedar City Energy Campus, now in development.</p>
               </div>
               <div>
-                <p className="eyebrow text-ink/50">How we can help</p>
+                <p className="eyebrow text-ink/70">How we can help</p>
                 <ul className="mt-3 space-y-2 text-[15px]">
                   <li><Link className="underline-offset-4 hover:underline" href="/data-centers">Power for data centers</Link></li>
                   <li><Link className="underline-offset-4 hover:underline" href="/campus">Locating on the campus</Link></li>

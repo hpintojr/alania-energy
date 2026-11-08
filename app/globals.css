@@ -5,6 +5,7 @@
   --color-navy-deep: #061830;
   --color-brand-blue: #0752bc;
   --color-brand-green: #55a338;
+  --color-green-ink: #367a23;
   --color-ink: #041c3b;
   --color-mist: #f4f6f9;
   --color-line: #d9dee7;
@@ -15,6 +16,20 @@
 html {
   scroll-behavior: smooth;
 }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
+
+/* Accessibility */
+.skip-link {
+  position: absolute; left: 12px; top: -60px; z-index: 100;
+  background: #ffffff; color: var(--color-ink); padding: 10px 16px; border-radius: 6px;
+  font-weight: 700; box-shadow: 0 0 0 3px var(--color-brand-blue);
+}
+.skip-link:focus { top: 12px; }
+:focus-visible { outline: 3px solid #f5b400; outline-offset: 2px; border-radius: 4px; }
+main:focus { outline: none; }
 
 body {
   background: #ffffff;
@@ -53,7 +68,7 @@ h1, h2, h3, .display {
   font-family: var(--font-display);
   min-height: 48px;
 }
-.btn-primary { @apply bg-brand-green text-white hover:bg-[#4a9230]; }
+.btn-primary { @apply bg-green-ink text-white hover:bg-[#2f6f1f]; }
 .btn-ghost { @apply border border-white/30 text-white hover:bg-white/10; }
 .btn-navy { @apply bg-navy text-white hover:bg-navy-deep; }
 

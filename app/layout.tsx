@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { CookieBanner } from "./cookie-banner";
 
 const inter = localFont({
   src: [
@@ -40,7 +41,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${montserrat.variable}`}>
-      <body>{children}</body>
+      <body>
+        <a href="#main" className="skip-link">Skip to main content</a>
+        {children}
+        <CookieBanner />
+      </body>
     </html>
   );
 }

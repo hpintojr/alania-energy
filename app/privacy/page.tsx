@@ -32,6 +32,7 @@ const sections: LegalSection[] = [
     paras: [
       "The Site uses one cookie, and only on the Investor Access page. After a valid access code is entered, we set a strictly necessary, encrypted session cookie that keeps the investor page unlocked for up to 12 hours. It contains no personal information and is not used for advertising or tracking.",
       "We do not use advertising cookies, analytics cookies or third-party tracking pixels on the Site, and our fonts are hosted on our own servers.",
+      "When you respond to our cookie notice, your choice (Accept or Decline) and the date are saved in your browser's local storage so the notice is not shown again. You can change your choice at any time using the Cookie preferences link at the bottom of every page.",
     ],
   },
   {
