@@ -141,8 +141,10 @@ export default async function HomePage({
               <p className="mt-3 text-ink/75">
                 Planning a large load, exploring a partnership, or have a question? Send us a note and our team will follow up.
               </p>
-              <p className="mt-6 text-sm text-ink/60">
-                Prefer email? <a className="underline" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+              <a href={`mailto:${CONTACT_EMAIL}`} className="btn btn-navy mt-6 w-full break-all sm:w-auto">{CONTACT_EMAIL}</a>
+              <p className="mt-6 text-sm text-ink/65">
+                <span className="font-semibold text-ink">Cedar City, Utah.</span> Received an investor access code?{" "}
+                <Link className="underline" href="/investors">Go to Investor Access</Link>.
               </p>
             </div>
             <div className="lg:col-span-2">
