@@ -4,6 +4,7 @@ import { Footer, Header } from "./components";
 const CAPABILITIES = [
   {
     title: "Natural Gas Generation",
+    href: "/natural-gas",
     body: "Utility-scale natural gas generation designed for reliable, dispatchable baseload power.",
     icon: (
       <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
@@ -13,6 +14,7 @@ const CAPABILITIES = [
   },
   {
     title: "Nuclear",
+    href: "/nuclear",
     body: "Advanced nuclear as a long-term, carbon-free component of the campus generation mix.",
     icon: (
       <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
@@ -25,7 +27,8 @@ const CAPABILITIES = [
   },
   {
     title: "Proven Technology",
-    body: "Generation built on GE turbine technology, proven in power applications worldwide.",
+    href: "/technology",
+    body: "Generation designed around GE turbine technology, proven in power applications worldwide.",
     icon: (
       <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
         <circle cx="12" cy="12" r="2.5" />
@@ -77,11 +80,14 @@ export default function HomePage() {
             <h2 className="mt-3 max-w-2xl text-3xl font-bold sm:text-4xl">Reliable power, built for scale.</h2>
             <div className="mt-12 grid gap-6 md:grid-cols-3">
               {CAPABILITIES.map((c) => (
-                <div key={c.title} className="rounded-lg border border-line bg-mist p-7">
+                <Link key={c.title} href={c.href} className="group rounded-lg border border-line bg-mist p-7 transition-colors hover:border-brand-blue">
                   <div className="flex h-12 w-12 items-center justify-center rounded-md bg-navy text-brand-green">{c.icon}</div>
                   <h3 className="mt-6 text-xl font-bold">{c.title}</h3>
                   <p className="mt-3 leading-relaxed text-ink/75">{c.body}</p>
-                </div>
+                  <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-brand-blue">
+                    Learn more <span className="transition-transform group-hover:translate-x-1" aria-hidden>→</span>
+                  </span>
+                </Link>
               ))}
             </div>
           </div>
@@ -95,12 +101,16 @@ export default function HomePage() {
               <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Cedar City Energy Campus</h2>
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink/80">
                 An energy campus in Cedar City, Utah, designed to serve next-generation data-center and
-                industrial loads, with power, water, gas, fiber and rail infrastructure on site.
+                industrial loads, planned around access to power, water, gas, fiber and rail.
               </p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Link href="/campus" className="btn btn-navy">About the campus</Link>
+                <Link href="/data-centers" className="btn border border-navy/20 text-ink hover:bg-white">Power for data centers</Link>
+              </div>
             </div>
             <div className="md:col-span-2">
               <div className="rounded-lg bg-navy p-7 text-white">
-                <p className="eyebrow text-white/60">On site</p>
+                <p className="eyebrow text-white/60">Planned infrastructure</p>
                 <ul className="mt-4 divide-y divide-white/10">
                   {INFRA.map((i) => (
                     <li key={i} className="flex items-center gap-3 py-3 font-semibold">

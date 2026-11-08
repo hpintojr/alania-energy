@@ -1,0 +1,13 @@
+import type { Metadata } from "next";
+import { ServicePage } from "../service-page";
+import { NUCLEAR } from "@/lib/content";
+
+export const metadata: Metadata = {
+  title: "Nuclear",
+  description: "Advanced nuclear as the long-term, carbon-free part of Alania Energy's generation mix.",
+  alternates: { canonical: "/nuclear" },
+};
+
+export default function Page() {
+  return <ServicePage c={NUCLEAR} />;
+}
