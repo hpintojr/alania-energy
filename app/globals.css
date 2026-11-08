@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0a2241;
+  --color-navy-deep: #061830;
+  --color-brand-blue: #0752bc;
+  --color-brand-green: #55a338;
+  --color-ink: #041c3b;
+  --color-mist: #f4f6f9;
+  --color-line: #d9dee7;
+  --font-display: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .display {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.grid-lines {
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+.accent-rule {
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-brand-blue), var(--color-brand-green));
+}
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 font-semibold transition-colors;
+  font-family: var(--font-display);
+  min-height: 48px;
+}
+.btn-primary { @apply bg-brand-green text-white hover:bg-[#4a9230]; }
+.btn-ghost { @apply border border-white/30 text-white hover:bg-white/10; }
+.btn-navy { @apply bg-navy text-white hover:bg-navy-deep; }
+
+.field {
+  @apply w-full rounded-md border border-line bg-white px-4 py-3 text-base outline-none;
+  min-height: 48px;
+}
+.field:focus { border-color: var(--color-brand-blue); box-shadow: 0 0 0 3px rgba(7,82,188,0.15); }
