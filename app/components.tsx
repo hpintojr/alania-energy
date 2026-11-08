@@ -24,7 +24,7 @@ export function Header({ onDark = false }: { onDark?: boolean }) {
     <header className={`relative z-20 ${onDark ? "bg-navy" : "bg-white border-b border-line"}`}>
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
         <Link href="/" aria-label="Alania Energy home">
-          <Logo variant={onDark ? "dark" : "light"} className="h-9 sm:h-11" />
+          <Logo variant={onDark ? "dark" : "light"} className="h-10 sm:h-12" />
         </Link>
 
         {/* Desktop */}
@@ -97,7 +97,7 @@ export function Footer() {
           to buy securities.
         </p>
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-5">
-          <span>© 2026 Alania Energy. All rights reserved.</span>
+          <span>© 2026 Alania Energy. All rights reserved. Alania Energy™ and the Alania Energy logo are trademarks of Alania Energy.</span>
           <span className="flex flex-wrap gap-x-5 gap-y-2">
             <Link href="/privacy" className="hover:text-white">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-white">Terms of Use</Link>
