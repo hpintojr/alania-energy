@@ -8,7 +8,7 @@ Next.js 15 (App Router) · Tailwind 4 · Vercel · Neon Postgres (access log).
 - `/investors` access-code gate; unlocked state shows the briefing and a Download PDF button
 - `POST /api/brochure/unlock` checks the code, sets a signed 12-hour cookie, redirects back
 - `POST /api/brochure/lock` clears the cookie
-- `GET /api/brochure/download` serves `private/Alania_Energy_Investor_Briefing.pdf` to a valid session only
+- `GET /api/brochure/download?format=pdf|pptx` serves the briefing from `private/` (PDF or PowerPoint) to a valid session only
 
 ## Environment variables (Vercel: Production only)
 | Name | What |
@@ -48,7 +48,7 @@ BASE_URL=https://<deployment> ACCESS_CODE=... DATABASE_URL=... EXPECTED_PDF_BYTE
 ```
 
 ## Replacing the PDF
-Overwrite `private/Alania_Energy_Investor_Briefing.pdf`, update `bytes`, `sizeLabel`, `pages`, `dated` in `lib/brochure.ts`, commit, push.
+Overwrite the PDF and/or PPTX in `private/`, update `bytes`, `sizeLabel`, `pages`, `dated` (and `HIGHLIGHTS` if figures changed) in `lib/brochure.ts`, commit, push.
 
 ## QR codes
 `npm run qr` regenerates `assets/qr/*.png|svg` for `https://alaniaenergy.com/` and `https://alaniaenergy.com/investors`.
