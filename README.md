@@ -13,7 +13,7 @@ Next.js 15 (App Router) · Tailwind 4 · Vercel · Neon Postgres (access log).
 ## Environment variables (Vercel: Production only)
 | Name | What |
 |---|---|
-| `ACCESS_CODE` | Shared investor access code. 16+ characters or nobody can unlock. |
+| `ACCESS_CODE` | Shared investor access code. 8+ characters or nobody can unlock. |
 | `SESSION_SECRET` | `openssl rand -hex 32`. Signs the session cookie. |
 | `DATABASE_URL` | Neon pooled connection string. |
 

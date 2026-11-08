@@ -2,7 +2,7 @@ import { createHash, createHmac, timingSafeEqual } from "node:crypto";
 
 export const COOKIE_NAME = "alania_access";
 const SESSION_HOURS = 12;
-const MIN_CODE_LENGTH = 16;
+const MIN_CODE_LENGTH = 8;
 
 function sha256(s: string) {
   return createHash("sha256").update(s, "utf8").digest();
