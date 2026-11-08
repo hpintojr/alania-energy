@@ -58,12 +58,13 @@ export default async function HomePage({
         {/* Hero */}
         <section className="relative overflow-hidden bg-navy text-white">
           <div className="grid-lines absolute inset-0" aria-hidden />
-          <div
-            className="absolute inset-y-0 right-0 hidden w-[52%] bg-cover bg-left md:block"
-            style={{ backgroundImage: "url(/hero-towers.webp)" }}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/art/turbine.svg"
+            alt=""
             aria-hidden
+            className="pointer-events-none absolute right-[2%] top-1/2 hidden w-[45%] max-w-[760px] -translate-y-1/2 opacity-90 lg:block"
           />
-          <div className="absolute inset-y-0 right-0 hidden w-[52%] bg-gradient-to-r from-navy via-navy/40 to-transparent md:block" aria-hidden />
           <div className="relative mx-auto max-w-6xl px-4 pb-20 pt-16 sm:px-6 sm:pb-28 sm:pt-24">
             <p className="eyebrow text-brand-green">Cedar City, Utah</p>
             <h1 className="mt-4 max-w-xl text-4xl font-extrabold leading-[1.05] sm:text-5xl lg:text-6xl">
@@ -77,6 +78,8 @@ export default async function HomePage({
               <Link href="/investors" className="btn btn-primary">Investor Access</Link>
               <Link href="/contact" className="btn btn-ghost">Contact us</Link>
             </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/art/turbine.svg" alt="" aria-hidden className="mt-12 w-full opacity-80 lg:hidden" />
           </div>
           <div className="accent-rule relative" />
         </section>

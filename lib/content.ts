@@ -9,6 +9,7 @@ const R = {
 };
 
 export const NATURAL_GAS: ServiceContent = {
+  art: "/art/natural-gas.svg",
   eyebrow: "Natural Gas Generation",
   title: "Dispatchable power, on demand.",
   intro:
@@ -55,6 +56,7 @@ export const NATURAL_GAS: ServiceContent = {
 };
 
 export const NUCLEAR: ServiceContent = {
+  art: "/art/nuclear.svg",
   eyebrow: "Nuclear",
   title: "Long-term, carbon-free power.",
   intro:
@@ -105,6 +107,7 @@ export const NUCLEAR: ServiceContent = {
 };
 
 export const TECHNOLOGY: ServiceContent = {
+  art: "/art/technology.svg",
   eyebrow: "Technology",
   title: "Designed around GE gas turbine technology.",
   intro:
@@ -152,6 +155,7 @@ export const TECHNOLOGY: ServiceContent = {
 };
 
 export const CAMPUS: ServiceContent = {
+  art: "/art/campus.svg",
   eyebrow: "Now in development",
   title: "Cedar City Energy Campus",
   intro:
@@ -205,6 +209,7 @@ export const CAMPUS: ServiceContent = {
 };
 
 export const DATA_CENTERS: ServiceContent = {
+  art: "/art/data-centers.svg",
   eyebrow: "Data Centers",
   title: "Built for data-center scale.",
   intro:

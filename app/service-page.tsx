@@ -10,6 +10,7 @@ export type ServiceContent = {
   related: { href: string; label: string; blurb: string }[];
   cta: { title: string; body: string };
   footnote?: string;
+  art: string;
 };
 
 export function ServicePage({ c }: { c: ServiceContent }) {
@@ -20,16 +21,19 @@ export function ServicePage({ c }: { c: ServiceContent }) {
         {/* Hero */}
         <section className="relative overflow-hidden bg-navy text-white">
           <div className="grid-lines absolute inset-0" aria-hidden />
-          <div
-            className="absolute inset-y-0 right-0 hidden w-[42%] bg-cover bg-left opacity-60 md:block"
-            style={{ backgroundImage: "url(/hero-towers.webp)" }}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={c.art}
+            alt=""
             aria-hidden
+            className="pointer-events-none absolute right-[2%] top-1/2 hidden w-[42%] max-w-[680px] -translate-y-1/2 opacity-90 lg:block"
           />
-          <div className="absolute inset-y-0 right-0 hidden w-[42%] bg-gradient-to-r from-navy to-transparent md:block" aria-hidden />
           <div className="relative mx-auto max-w-6xl px-4 pb-16 pt-14 sm:px-6 sm:pb-20 sm:pt-20">
             <p className="eyebrow text-brand-green">{c.eyebrow}</p>
-            <h1 className="mt-4 max-w-2xl text-4xl font-extrabold leading-[1.08] sm:text-5xl">{c.title}</h1>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/80">{c.intro}</p>
+            <h1 className="mt-4 max-w-2xl text-4xl font-extrabold leading-[1.08] sm:text-5xl lg:max-w-xl">{c.title}</h1>
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/80 lg:max-w-[52%]">{c.intro}</p>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={c.art} alt="" aria-hidden className="mt-10 w-full max-w-xl opacity-80 lg:hidden" />
           </div>
           <div className="accent-rule relative" />
         </section>
