@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CONTACT_EMAIL, Footer, Header } from "./components";
+import { Footer, Header } from "./components";
 
 export type ServiceContent = {
   eyebrow: string;
@@ -96,7 +96,7 @@ export function ServicePage({ c }: { c: ServiceContent }) {
               <p className="mt-3 max-w-xl text-white/75">{c.cta.body}</p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
-              <a href={`mailto:${CONTACT_EMAIL}`} className="btn btn-primary">Email us</a>
+              <Link href="/contact" className="btn btn-primary">Contact us</Link>
               <Link href="/investors" className="btn btn-ghost">Investor Access</Link>
             </div>
           </div>

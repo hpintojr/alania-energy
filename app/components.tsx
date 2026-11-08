@@ -8,7 +8,7 @@ export const SERVICES = [
   { href: "/data-centers", label: "Data Centers" },
 ] as const;
 
-export const CONTACT_EMAIL = "information@alaniaenergy.com";
+export const CONTACT_EMAIL = "info@alaniaenergy.com";
 
 export function Logo({ variant = "light", className = "h-10" }: { variant?: "light" | "dark"; className?: string }) {
   /* eslint-disable-next-line @next/next/no-img-element */
@@ -30,7 +30,7 @@ export function Header({ onDark = false }: { onDark?: boolean }) {
           {SERVICES.map((s) => (
             <Link key={s.href} href={s.href}>{s.label}</Link>
           ))}
-          <Link href="/#contact">Contact</Link>
+          <Link href="/contact">Contact</Link>
           <Link href="/investors" className="btn btn-primary !min-h-0 !px-4 !py-2 text-sm">Investors</Link>
         </nav>
 
@@ -49,7 +49,7 @@ export function Header({ onDark = false }: { onDark?: boolean }) {
               {SERVICES.map((s) => (
                 <li key={s.href}><Link href={s.href} className="block py-3">{s.label}</Link></li>
               ))}
-              <li><Link href="/#contact" className="block py-3">Contact</Link></li>
+              <li><Link href="/contact" className="block py-3">Contact</Link></li>
             </ul>
             <Link href="/investors" className="btn btn-primary mt-4 w-full">Investor Access</Link>
           </nav>
@@ -82,6 +82,7 @@ export function Footer() {
           <p className="eyebrow text-white/50">Company</p>
           <ul className="mt-4 space-y-2 text-sm text-white/80">
             <li><Link href="/" className="hover:text-white">Home</Link></li>
+            <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
             <li><Link href="/investors" className="hover:text-white">Investor Access</Link></li>
             <li><a href={`mailto:${CONTACT_EMAIL}`} className="break-all hover:text-white">{CONTACT_EMAIL}</a></li>
           </ul>

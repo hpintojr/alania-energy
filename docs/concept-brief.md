@@ -17,7 +17,7 @@ A simple public website for Alania Energy at AlaniaEnergy.com that presents the 
 - Password-protected investor page. QR code opens the page, page asks for the password, then shows the briefing and a PDF download.
 - The download is a PDF (not PowerPoint) of Alania_Energy_Investor_Briefing. Typo fixes only; figures untouched.
 - One shared passphrase, plus every unlock attempt and download logged in Neon.
-- Contact email information@alaniaenergy.com, forwarded to the CEO.
+- Contact email info@alaniaenergy.com, forwarded to the CEO.
 - QR code image for the site and for the investor page.
 - Code on Hamilton's GitHub, deployed to Vercel, domain AlaniaEnergy.com (already owned).
 - Zarla used only as a design and copy reference, not as the live site.
@@ -32,6 +32,6 @@ A simple public website for Alania Energy at AlaniaEnergy.com that presents the 
 
 ## Open questions
 - Where is DNS for AlaniaEnergy.com (registrar / Cloudflare)? Needed to point the domain at Vercel and set up email forwarding.
-- Which mail provider handles information@alaniaenergy.com (Cloudflare Email Routing, Google Workspace, registrar forwarding)?
+- Which mail provider handles info@alaniaenergy.com (Cloudflare Email Routing, Google Workspace, registrar forwarding)?
 - What passphrase does the CEO want to hand out? Default: Hamilton sets one and shares it.
 - Company address and phone for the footer, if any should be public.

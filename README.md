@@ -56,7 +56,7 @@ They only scan to something once DNS for alaniaenergy.com points at Vercel.
 
 ## Domain and email
 1. In Vercel, project Domains: add `alaniaenergy.com` and `www.alaniaenergy.com`; copy the exact A / CNAME values Vercel shows and set them at the registrar.
-2. `information@alaniaenergy.com`: use the registrar's email forwarding or Cloudflare Email Routing (MX records + one rule) to forward to the CEO's mailbox. Not code; needs DNS access.
+2. `info@alaniaenergy.com`: use the registrar's email forwarding or Cloudflare Email Routing (MX records + one rule) to forward to the CEO's mailbox. Not code; needs DNS access.
 
 ## Repo visibility
 This repo must be **private** before any QR code or link is shared. While public, the PDF under `private/` is readable from GitHub regardless of the site's password.

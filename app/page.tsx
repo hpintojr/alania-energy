@@ -1,5 +1,8 @@
 import Link from "next/link";
-import { Footer, Header } from "./components";
+import { CONTACT_EMAIL, Footer, Header } from "./components";
+import { ContactForm } from "./contact-form";
+
+export const dynamic = "force-dynamic";
 
 const CAPABILITIES = [
   {
@@ -42,7 +45,12 @@ const CAPABILITIES = [
 
 const INFRA = ["Power", "Water", "Natural Gas", "Fiber", "Rail"];
 
-export default function HomePage() {
+export default async function HomePage({
+  searchParams,
+}: {
+  searchParams: Promise<{ sent?: string; error?: string }>;
+}) {
+  const { sent, error } = await searchParams;
   return (
     <>
       <Header onDark />
@@ -67,7 +75,7 @@ export default function HomePage() {
             </p>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <Link href="/investors" className="btn btn-primary">Investor Access</Link>
-              <Link href="#contact" className="btn btn-ghost">Contact us</Link>
+              <Link href="/contact" className="btn btn-ghost">Contact us</Link>
             </div>
           </div>
           <div className="accent-rule relative" />
@@ -125,22 +133,20 @@ export default function HomePage() {
         </section>
 
         {/* Contact */}
-        <section id="contact" className="bg-white">
-          <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
-            <div className="rounded-lg border border-line p-8 sm:p-12 md:flex md:items-center md:justify-between md:gap-10">
-              <div>
-                <p className="eyebrow text-brand-blue">Contact</p>
-                <h2 className="mt-3 text-3xl font-bold">Get in touch</h2>
-                <p className="mt-3 max-w-md text-ink/75">
-                  Investor materials are available to qualified parties on request.
-                </p>
-              </div>
-              <a
-                href="mailto:information@alaniaenergy.com"
-                className="btn btn-navy mt-8 w-full break-all md:mt-0 md:w-auto"
-              >
-                information@alaniaenergy.com
-              </a>
+        <section id="contact" className="scroll-mt-4 bg-white">
+          <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-3">
+            <div>
+              <p className="eyebrow text-brand-blue">Contact</p>
+              <h2 className="mt-3 text-3xl font-bold">Get in touch</h2>
+              <p className="mt-3 text-ink/75">
+                Planning a large load, exploring a partnership, or have a question? Send us a note and our team will follow up.
+              </p>
+              <p className="mt-6 text-sm text-ink/60">
+                Prefer email? <a className="underline" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+              </p>
+            </div>
+            <div className="lg:col-span-2">
+              <ContactForm page="/" sent={sent === "1"} error={error} />
             </div>
           </div>
         </section>

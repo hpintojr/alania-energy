@@ -26,15 +26,15 @@ Build and launch a simple public website for Alania Energy, a power energy compa
    - Proven Technology: "Generation built on GE turbine technology, proven in power applications worldwide." (Card retitled so it reads as what we do, not a product we sell; GE turbines named in the sentence.) [R]
    All three sentences are written at the level the CEO asked for: name the technology, do not explain specs. The specific model (LM2500) is not mentioned, per the CEO's "just say GE turbines".
 4. Cedar City Energy Campus (one band): "Now in development: an energy campus in Cedar City, Utah, designed to serve next-generation data-center and industrial loads, with power, water, gas, fiber and rail infrastructure on site." ("In development" added so no visitor assumes the plant is operating.) [R] No MW figures, no dollar figures, no counterparties, no partner names. Those stay in the gated PDF.
-5. Contact band: "information@alaniaenergy.com" as a mailto link, plus the line "Investor materials are available to qualified parties on request." Phone and address omitted until the CEO provides them.
+5. Contact band: "info@alaniaenergy.com" as a mailto link, plus the line "Investor materials are available to qualified parties on request." Phone and address omitted until the CEO provides them.
 6. Footer: dark logo variant, copyright "© 2026 Alania Energy. All rights reserved.", links Home / Investors / Contact.
 
 ### 4.2 `/investors` Gate and brochure page
 State A, locked (no valid cookie):
 - Logo, title "Investor Briefing", one sentence: "This material is confidential and intended for invited parties. Enter the access code you were given."
 - Single access-code field, "Unlock" button. The form POSTs to `/api/brochure/unlock` (route handler, works without JavaScript) which answers with a 303 redirect back to `/investors`, `/investors?error=invalid` or `/investors?error=paused`; the page renders the message from the query string. [R]
-- On failure: "That access code was not recognized. Questions: information@alaniaenergy.com". No hint about the code. [R]
-- Site-wide circuit breaker [R]: if 50 or more failed attempts were logged across all visitors in the last 15 minutes, the gate shows "Access is paused for a few minutes. Questions: information@alaniaenergy.com" and refuses every code, correct or not, until the count drops. If the log cannot be read, the gate fails closed with the same message. No per-IP blocking (shared venue Wi-Fi and carrier NAT would lock out real investors).
+- On failure: "That access code was not recognized. Questions: info@alaniaenergy.com". No hint about the code. [R]
+- Site-wide circuit breaker [R]: if 50 or more failed attempts were logged across all visitors in the last 15 minutes, the gate shows "Access is paused for a few minutes. Questions: info@alaniaenergy.com" and refuses every code, correct or not, until the count drops. If the log cannot be read, the gate fails closed with the same message. No per-IP blocking (shared venue Wi-Fi and carrier NAT would lock out real investors).
 - Footer: contact email and link back to Home.
 
 State B, unlocked (valid cookie):
@@ -80,7 +80,7 @@ Two PNGs (and SVGs) generated in the build, saved in the repo under `assets/qr/`
 High error correction, navy on white, logo mark in the center. These codes do NOT scan to anything until DNS for alaniaenergy.com points at Vercel (rollout step 6). Do not print or share them before that. [R]
 
 ## 9. Email
-information@alaniaenergy.com forwarding to the CEO is a DNS / mail-provider task, not code. The plan: if DNS is on Cloudflare, use Cloudflare Email Routing (free, MX plus one forwarding rule). Otherwise use the registrar's forwarding. Hamilton needs DNS access either way. The site only uses the address as a mailto link, so the site launches regardless; forwarding is a follow-up step with written instructions in the README.
+info@alaniaenergy.com forwarding to the CEO is a DNS / mail-provider task, not code. The plan: if DNS is on Cloudflare, use Cloudflare Email Routing (free, MX plus one forwarding rule). Otherwise use the registrar's forwarding. Hamilton needs DNS access either way. The site only uses the address as a mailto link, so the site launches regardless; forwarding is a follow-up step with written instructions in the README.
 
 ## 10. Stack and deployment
 - Next.js (App Router, TypeScript), Tailwind CSS. Node 22.

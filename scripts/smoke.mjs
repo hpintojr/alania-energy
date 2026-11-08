@@ -46,7 +46,7 @@ const before = {
   ok(r.status === 200, "home returns 200");
   ok(html.includes("/brand/logo-dark.svg"), "home shows the logo");
   ok(["Natural Gas Generation", "Nuclear", "Proven Technology"].every((t) => html.includes(t)), "home shows the three cards");
-  ok(html.includes("information@alaniaenergy.com"), "home shows the contact email");
+  ok(html.includes("info@alaniaenergy.com"), "home shows the contact email");
 }
 
 // 2. Gate
