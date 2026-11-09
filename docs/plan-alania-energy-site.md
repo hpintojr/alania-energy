@@ -25,7 +25,7 @@ Build and launch a simple public website for Alania Energy, a power energy compa
    - Nuclear: "Advanced nuclear as a long-term, carbon-free component of the campus generation mix."
    - Proven Technology: "Generation built on GE turbine technology, proven in power applications worldwide." (Card retitled so it reads as what we do, not a product we sell; GE turbines named in the sentence.) [R]
    All three sentences are written at the level the CEO asked for: name the technology, do not explain specs. The specific model (LM2500) is not mentioned, per the CEO's "just say GE turbines".
-4. Cedar City Energy Campus (one band): "Now in development: an energy campus in Cedar City, Utah, designed to serve next-generation data-center and industrial loads, with power, water, gas, fiber and rail infrastructure on site." ("In development" added so no visitor assumes the plant is operating.) [R] No MW figures, no dollar figures, no counterparties, no partner names. Those stay in the gated PDF.
+4. Cedar City Energy Campus (one band): "Now in development: an energy campus in Cedar City, Utah, designed to serve a planned research facility and industrial space, with power, water, gas, fiber and rail infrastructure on site." ("In development" added so no visitor assumes the plant is operating.) [R] No MW figures, no dollar figures, no counterparties, no partner names. Those stay in the gated PDF.
 5. Contact band: "info@alaniaenergy.com" as a mailto link, plus the line "Investor materials are available to qualified parties on request." Phone and address omitted until the CEO provides them.
 6. Footer: dark logo variant, copyright "© 2026 Alania Energy. All rights reserved.", links Home / Investors / Contact.
 

@@ -5,7 +5,7 @@ import { ContactForm } from "../contact-form";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Contact Alania Energy about power supply, data centers, partnerships or investment.",
+  description: "Contact Alania Energy about power supply, research and industrial space, partnerships or investment.",
   alternates: { canonical: "/contact" },
 };
 export const dynamic = "force-dynamic";
@@ -46,7 +46,7 @@ export default async function ContactPage({
               <div>
                 <p className="eyebrow text-ink/70">How we can help</p>
                 <ul className="mt-3 space-y-2 text-[15px]">
-                  <li><Link className="underline-offset-4 hover:underline" href="/data-centers">Power for data centers</Link></li>
+                  <li><Link className="underline-offset-4 hover:underline" href="/research-industrial">Research &amp; industrial space</Link></li>
                   <li><Link className="underline-offset-4 hover:underline" href="/campus">Locating on the campus</Link></li>
                   <li><Link className="underline-offset-4 hover:underline" href="/natural-gas">Natural gas generation</Link></li>
                   <li><Link className="underline-offset-4 hover:underline" href="/nuclear">Long-term nuclear</Link></li>

@@ -3,7 +3,7 @@ import { neon } from "@neondatabase/serverless";
 export const CRM_LOCATION_ID = "XbX1MnjeeSAgS6bEaJ0j"; // XBeton sub-account
 export const INTERESTS = [
   "Power supply for a large load",
-  "Data center",
+  "Research or industrial space",
   "Investment",
   "Partnership",
   "Media",

@@ -1,6 +1,6 @@
 const {chromium}=require('playwright');const fs=require('fs');
 const axeSrc=fs.readFileSync('node_modules/axe-core/axe.min.js','utf8');
-(async()=>{const b=await chromium.launch();const routes=['/','/natural-gas','/nuclear','/technology','/campus','/data-centers','/green-technology','/contact','/investors','/investors?error=invalid','/privacy','/terms','/accessibility'];
+(async()=>{const b=await chromium.launch();const routes=['/','/natural-gas','/nuclear','/technology','/campus','/research-industrial','/green-technology','/contact','/investors','/investors?error=invalid','/privacy','/terms','/accessibility'];
 const all={};
 for (const [vw,label] of [[1280,'desk'],[390,'phone']]){
  const ctx=await b.newContext({viewport:{width:vw,height:900}});

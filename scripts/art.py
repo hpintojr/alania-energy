@@ -242,36 +242,42 @@ def campus():
     return svg("".join(p), "Line drawing of the energy campus site plan")
 
 
-# ---------------------------------------------------------------- data centers
-def data_centers():
+# ---------------------------------------------------------------- research & industrial
+def research_industrial():
     p = []
     gy = 520
     p.append(ground(gy))
-    # building section
-    p.append(g(f'<path d="M110 {gy} V220 H790 V{gy}"/><path d="M110 220 L130 200 H770 L790 220"/>', LINE, 1.8))
-    # rooftop cooling units
-    for x in range(160, 760, 120):
-        p.append(g(f'<rect x="{x}" y="160" width="80" height="40" rx="3"/><circle cx="{x+22}" cy="180" r="12"/><circle cx="{x+58}" cy="180" r="12"/>'
-                   f'<path d="M{x+22} 168 v24 M{x+10} 180 h24 M{x+58} 168 v24 M{x+46} 180 h24" opacity="0.5"/>', LINE, 1.3))
-    # raised floor
-    p.append(g(f'<path d="M110 490 H790"/>' + "".join(f'<path d="M{x} 490 V{gy}"/>' for x in range(140, 790, 40)), SOFT, 1, 0.7))
-    # racks
-    for x in range(150, 760, 70):
-        rack = f'<rect x="{x}" y="270" width="46" height="220" rx="2"/>'
-        rack += "".join(f'<path d="M{x+6} {y} H{x+40}"/>' for y in range(284, 486, 12))
-        rack += f'<circle cx="{x+36}" cy="278" r="2.4" fill="{GREEN}" stroke="none"/>'
-        p.append(g(rack, LINE, 1.1))
-    # cable tray
-    p.append(g('<path d="M120 250 H780"/><path d="M120 258 H780"/>', SOFT, 1.2, 0.8))
-    # incoming power + fiber
-    p.append(g(f'<path d="M20 330 H110"/><path d="M20 346 H110"/><path d="M40 320 l10 10 l-10 10 M60 320 l10 10 l-10 10" />', LINE, 1.4))
-    p.append(g('<path d="M790 300 C840 300 850 260 880 250"/><path d="M790 330 C850 330 860 360 885 380"/>', GREEN, 1.6, 1, "2 6"))
-    p.append(g('<circle cx="880" cy="250" r="5"/><circle cx="885" cy="380" r="5"/>', GREEN, 1.6))
-    p.append(label(60, 310, "POWER", "middle"))
-    p.append(label(860, 230, "FIBER", "end"))
-    p.append(leader(450, 280, 450, 120) + label(450, 110, "COMPUTE HALL", "middle"))
-    p.append(leader(700, 180, 820, 130) + label(830, 120, "COOLING", "end"))
-    return svg("".join(p), "Line drawing of a data center hall with racks and cooling")
+    # --- research facility (left): two-storey lab with glazing and rooftop vents
+    p.append(g(f'<path d="M60 {gy} V250 H360 V{gy}"/><path d="M60 250 H360 V236 H60 Z"/>', LINE, 1.8))
+    for y in (280, 360, 440):
+        p.append(g("".join(f'<rect x="{x}" y="{y}" width="48" height="52" rx="2"/>'
+                           for x in (86, 152, 218, 284) if not (y == 440 and x in (152, 218))), SOFT, 1.1))
+    p.append(g(f'<rect x="186" y="{gy-70}" width="48" height="70"/><path d="M210 {gy-70} V{gy}"/>', LINE, 1.4))
+    for x in (96, 166):
+        p.append(g(f'<rect x="{x}" y="212" width="30" height="24" rx="2"/><path d="M{x+6} 212 V204 M{x+24} 212 V204"/>', LINE, 1.2))
+    # flask emblem
+    p.append(g('<path d="M318 168 v22 l-16 30 a6 6 0 0 0 5 9 h38 a6 6 0 0 0 5 -9 l-16 -30 v-22"/><path d="M314 168 h20"/>'
+               '<path d="M306 214 h40" opacity="0.6"/>', GREEN, 1.6))
+    # --- industrial space (right): sawtooth-roof hall with bay doors
+    x0, x1 = 420, 860
+    p.append(g(f'<path d="M{x0} {gy} V300 M{x1} 300 V{gy}"/>', LINE, 1.8))
+    teeth = "".join(f'<path d="M{x} 300 L{x} 236 L{x+88} 300"/>' for x in range(x0, x1, 88))
+    p.append(g(teeth, LINE, 1.6))
+    p.append(g("".join(f'<path d="M{x+4} 246 L{x+4} 292" opacity="0.6"/>' for x in range(x0, x1, 88)), SOFT, 1))
+    for x in (450, 560, 670):
+        door = f'<rect x="{x}" y="{gy-120}" width="80" height="120"/>'
+        door += "".join(f'<path d="M{x} {y} H{x+80}"/>' for y in range(gy - 108, gy, 12))
+        p.append(g(door, SOFT, 1.1))
+    p.append(g(f'<rect x="782" y="{gy-60}" width="40" height="60"/>', LINE, 1.3))
+    # gantry crane hint inside
+    p.append(g(f'<path d="M440 330 H840"/><path d="M640 330 V352"/><path d="M630 352 h20 l-10 12 z"/>', SOFT, 1.1, 0.7))
+    # --- power feed from campus generation
+    p.append(g(f'<path d="M360 330 C390 330 392 360 420 360"/>', GREEN, 1.6, 1, "2 6"))
+    p.append(g('<path d="M20 200 H60"/><path d="M20 214 H60"/><path d="M30 190 l10 10 l-10 10" />', LINE, 1.4))
+    p.append(label(28, 180, "POWER", "start"))
+    p.append(leader(160, 236, 160, 140) + label(160, 128, "RESEARCH FACILITY", "middle"))
+    p.append(leader(772, 250, 772, 150) + label(772, 138, "INDUSTRIAL SPACE", "middle"))
+    return svg("".join(p), "Line drawing of a research facility and an industrial building on the campus")
 
 
 # ---------------------------------------------------------------- green technology
@@ -324,7 +330,7 @@ ART = {
     "nuclear": nuclear,
     "technology": technology,
     "campus": campus,
-    "data-centers": data_centers,
+    "research-industrial": research_industrial,
     "green-technology": green_technology,
 }
 for name, fn in ART.items():

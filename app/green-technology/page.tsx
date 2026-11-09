@@ -4,7 +4,7 @@ import { GREEN } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Green Technology",
-  description: "Green buildings, a green data center and planned carbon capture at the Cedar City Energy Campus.",
+  description: "Green buildings, on-site power and planned carbon capture at the Cedar City Energy Campus.",
   alternates: { canonical: "/green-technology" },
 };
 

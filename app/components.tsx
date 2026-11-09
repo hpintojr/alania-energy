@@ -6,7 +6,7 @@ export const SERVICES = [
   { href: "/nuclear", label: "Nuclear" },
   { href: "/technology", label: "Technology" },
   { href: "/campus", label: "Campus" },
-  { href: "/data-centers", label: "Data Centers" },
+  { href: "/research-industrial", label: "Research & Industrial" },
   { href: "/green-technology", label: "Green Tech" },
 ] as const;
 
@@ -28,7 +28,7 @@ export function Header({ onDark = false }: { onDark?: boolean }) {
         </Link>
 
         {/* Desktop */}
-        <nav className={`hidden items-center gap-6 text-[15px] font-semibold lg:flex ${link}`}>
+        <nav className={`hidden items-center gap-5 whitespace-nowrap text-[15px] font-semibold xl:flex ${link}`}>
           {SERVICES.map((s) => (
             <Link key={s.href} href={s.href}>{s.label}</Link>
           ))}
@@ -37,7 +37,7 @@ export function Header({ onDark = false }: { onDark?: boolean }) {
         </nav>
 
         {/* Mobile: works without JavaScript */}
-        <details className="group lg:hidden">
+        <details className="group xl:hidden">
           <summary className={`flex cursor-pointer list-none items-center gap-2 rounded-md px-3 py-2 font-semibold ${link} [&::-webkit-details-marker]:hidden`}>
             Menu
             <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>

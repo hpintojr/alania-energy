@@ -7,6 +7,9 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     "/api/brochure/download": ["./private/**"],
   },
+  async redirects() {
+    return [{ source: "/data-centers", destination: "/research-industrial", permanent: true }];
+  },
   async headers() {
     return [
       {

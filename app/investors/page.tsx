@@ -57,7 +57,7 @@ function Locked({ error }: { error?: string }) {
           </h1>
           <p className="mt-5 max-w-lg text-lg leading-relaxed text-ink/80">
             A {BROCHURE.pages}-page briefing on the Cedar City Energy Campus, a private ownership platform for scaled
-            energy infrastructure and data-center growth in Cedar City, Utah.
+            energy infrastructure and industrial growth in Cedar City, Utah.
           </p>
           <p className="mt-8 eyebrow text-ink/70">What&apos;s inside</p>
           <ol className="mt-4 grid gap-x-6 gap-y-3 sm:grid-cols-2">

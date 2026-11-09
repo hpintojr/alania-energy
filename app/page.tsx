@@ -112,15 +112,15 @@ export default async function HomePage({
               <p className="eyebrow text-brand-green">Green Technology</p>
               <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Green by design.</h2>
               <p className="mt-5 text-lg leading-relaxed text-white/80">
-                The Cedar City Energy Campus is being developed around green technology: green buildings, a green data
-                center, and planned carbon capture and waste-to-nanocarbon processes designed to reduce carbon and lock it away.
+                The Cedar City Energy Campus is being developed around green technology: green buildings with on-site
+                power, and planned carbon capture and waste-to-nanocarbon processes designed to reduce carbon and lock it away.
               </p>
               <Link href="/green-technology" className="btn btn-primary mt-8">Explore green technology</Link>
             </div>
             <ul className="grid gap-4 sm:grid-cols-2">
               {[
                 ["Green buildings", "Planned with insulating XBeton AAC block."],
-                ["Green data center", "AAC data halls with power generated on site."],
+                ["Green research & industry", "AAC buildings with power generated on site."],
                 ["Carbon capture", "Planned to remove CO2 from generation exhaust."],
                 ["Waste to nanocarbon", "Carbon locked into durable building materials."],
               ].map(([t, b]) => (
@@ -141,12 +141,12 @@ export default async function HomePage({
               <p className="eyebrow text-green-ink">Now in development</p>
               <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Cedar City Energy Campus</h2>
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink/80">
-                An energy campus in Cedar City, Utah, designed to serve next-generation data-center and
-                industrial loads, planned around access to power, water, gas, fiber and rail.
+                An energy campus in Cedar City, Utah, designed to serve a planned research facility and
+                industrial space, planned around access to power, water, gas, fiber and rail.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link href="/campus" className="btn btn-navy">About the campus</Link>
-                <Link href="/data-centers" className="btn border border-navy/20 text-ink hover:bg-white">Power for data centers</Link>
+                <Link href="/research-industrial" className="btn border border-navy/20 text-ink hover:bg-white">Research &amp; industrial space</Link>
               </div>
             </div>
             <div className="md:col-span-2">

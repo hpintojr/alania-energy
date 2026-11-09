@@ -24,7 +24,7 @@ A simple public website for Alania Energy at AlaniaEnergy.com that presents the 
 
 ## Out of scope (v1)
 - AI chat on the site (CEO wants it, do it after v1 ships).
-- The XBeton green data center page (separate site).
+- The XBeton green building page (separate site).
 - Partner logos (Fluor, Hylion, GE and others) until contracts are signed; CEO said add them "correctly" once signed.
 - Site plan, elevations, renderings (Sean to send; add in v2).
 - Per-investor access codes, admin dashboard for the log.

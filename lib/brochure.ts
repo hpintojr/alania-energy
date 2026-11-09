@@ -41,9 +41,9 @@ export const DECK_CONTENTS = [
 export const HIGHLIGHTS = {
   headline: "The project has crossed the highest-risk development gates.",
   stats: [
-    { value: "7,000 MW", label: "Energy campus scale", note: "Designed for next-generation data-center loads in Cedar City, Utah." },
+    { value: "7,000 MW", label: "Energy campus scale", note: "Designed for large research and industrial loads in Cedar City, Utah." },
     { value: "3,000 MW", label: "Committed offtake", note: "Across three credit-worthy counterparties; PPA execution is the final pending step." },
-    { value: "4,000 MW", label: "Embedded growth", note: "Approved data-center load ready to contract behind the initial phase." },
+    { value: "4,000 MW", label: "Embedded growth", note: "Approved large-load capacity ready to contract behind the initial phase." },
     { value: "$8.0B", label: "Senior capital", note: "Taxable conduit revenue bonds for the City; Stifel has agreed to lead the issuance." },
   ],
   milestones: [

@@ -5,8 +5,8 @@ const R = {
   nuclear: { href: "/nuclear", label: "Nuclear", blurb: "The long-term green power source in the generation mix." },
   tech: { href: "/technology", label: "Turbine Technology", blurb: "The proven GE turbine platform our gas generation is designed around." },
   campus: { href: "/campus", label: "Cedar City Energy Campus", blurb: "Generation built next to the loads it serves." },
-  dc: { href: "/data-centers", label: "Data Centers", blurb: "Dedicated, always-on power for data-center scale." },
-  green: { href: "/green-technology", label: "Green Technology", blurb: "Green buildings, a green data center and planned carbon capture." },
+  ri: { href: "/research-industrial", label: "Research & Industrial", blurb: "A planned research facility and industrial space, powered on site." },
+  green: { href: "/green-technology", label: "Green Technology", blurb: "Green buildings, on-site power and planned carbon capture." },
 };
 
 export const NATURAL_GAS: ServiceContent = {
@@ -14,7 +14,7 @@ export const NATURAL_GAS: ServiceContent = {
   eyebrow: "Natural Gas Generation",
   title: "Dispatchable power, on demand.",
   intro:
-    "Natural gas is the foundation of the Cedar City Energy Campus. It is designed to provide firm, around-the-clock electricity that large industrial and data-center customers can plan around, independent of sun or wind.",
+    "Natural gas is the foundation of the Cedar City Energy Campus. It is designed to provide firm, around-the-clock electricity that large industrial and research customers can plan around, independent of sun or wind.",
   points: [
     { title: "Firm baseload", body: "Runs day and night, independent of sun or wind, to support critical loads." },
     { title: "Responsive output", body: "Generation can be raised or lowered quickly to follow demand as it changes." },
@@ -100,7 +100,7 @@ export const NUCLEAR: ServiceContent = {
       ],
     },
   ],
-  related: [R.gas, R.campus, R.dc],
+  related: [R.gas, R.campus, R.ri],
   cta: {
     title: "Interested in green capacity?",
     body: "Reach out to discuss long-term power needs and the role of nuclear on the campus.",
@@ -146,7 +146,7 @@ export const TECHNOLOGY: ServiceContent = {
       ],
     },
   ],
-  related: [R.gas, R.campus, R.dc],
+  related: [R.gas, R.campus, R.ri],
   cta: {
     title: "Questions about the technology?",
     body: "We are happy to walk through how generation on the campus is designed.",
@@ -160,7 +160,7 @@ export const CAMPUS: ServiceContent = {
   eyebrow: "Now in development",
   title: "Cedar City Energy Campus",
   intro:
-    "A purpose-built energy campus in Cedar City, Utah, designed to place large-scale generation right next to the industrial and data-center loads it serves.",
+    "A purpose-built energy campus in Cedar City, Utah, designed to place large-scale generation right next to the research and industrial operations it serves.",
   points: [
     { title: "Power", body: "Planned transmission infrastructure to move power across the campus." },
     { title: "Water", body: "Planned water supply to support campus operations." },
@@ -184,13 +184,13 @@ export const CAMPUS: ServiceContent = {
     {
       heading: "Planned infrastructure",
       paras: [
-        "A large energy campus depends on more than generation. The campus is planned around access to the core infrastructure that heavy industrial and data-center users require.",
+        "A large energy campus depends on more than generation. The campus is planned around access to the core infrastructure that heavy industrial and research users require.",
       ],
       bullets: [
         { title: "Power", body: "Transmission infrastructure is planned to connect campus generation with campus loads." },
         { title: "Water", body: "The campus plan includes water supply for generation and customer operations." },
         { title: "Natural gas", body: "Natural gas service is planned as the fuel source for generation." },
-        { title: "Fiber", body: "High-capacity fiber is planned for data-center and digital infrastructure customers." },
+        { title: "Fiber", body: "High-capacity fiber is planned for research and industrial customers." },
         { title: "Rail", body: "Rail access is planned to support delivery of heavy equipment and materials." },
         { title: "Room to grow", body: "The campus is planned so generation and customers can be added in phases." },
       ],
@@ -202,69 +202,71 @@ export const CAMPUS: ServiceContent = {
       ],
     },
   ],
-  related: [R.green, R.dc, R.gas],
+  related: [R.green, R.ri, R.gas],
   cta: {
     title: "Explore the campus with us.",
     body: "Contact us to discuss locating on the campus.",
   },
 };
 
-export const DATA_CENTERS: ServiceContent = {
-  art: "/art/data-centers.svg",
-  eyebrow: "Data Centers",
-  title: "Built for data-center scale.",
+export const RESEARCH_INDUSTRIAL: ServiceContent = {
+  art: "/art/research-industrial.svg",
+  eyebrow: "Research & Industrial",
+  title: "Room to research. Space to build.",
   intro:
-    "Data centers need large amounts of power that never switches off. The Cedar City Energy Campus is being designed to deliver that power on site, reducing reliance on a congested regional grid.",
+    "The Cedar City Energy Campus is planned to include a research facility and industrial space, both powered on site by campus generation and built with green technology.",
   points: [
-    { title: "Dedicated supply", body: "Generation planned on the same campus as your facility." },
-    { title: "Always-on power", body: "Firm natural gas generation designed to run around the clock." },
-    { title: "Green by design", body: "Green buildings, planned carbon capture and advanced nuclear over the long term." },
-    { title: "Planned infrastructure", body: "Power, water, gas, fiber and rail planned for the site." },
+    { title: "Research facility", body: "Space planned for energy, materials and technology research." },
+    { title: "Industrial space", body: "Sites planned for manufacturing and heavy industrial users." },
+    { title: "Power on site", body: "Firm natural gas generation planned on the same campus." },
+    { title: "Green by design", body: "AAC buildings, planned carbon capture and advanced nuclear over the long term." },
   ],
   sections: [
     {
       heading: "The challenge",
       paras: [
-        "Demand for computing, driven by cloud services and artificial intelligence, is growing quickly, and the power behind it is often the hardest part to secure. In many regions, new large loads face long waits to connect to the grid, while data centers themselves cannot tolerate interruptions.",
-        "That leaves developers looking for sites where reliable, large-scale power can be planned for with confidence.",
+        "Large research and industrial operations need dependable power, and in many regions it is the hardest part to secure. New large loads can face long waits to connect to the grid, and interruptions are costly for labs and production lines alike.",
+        "That leaves companies looking for sites where reliable, large-scale power can be planned for with confidence.",
       ],
     },
     {
-      heading: "What the campus offers",
+      heading: "A research facility",
       paras: [
-        "The Cedar City Energy Campus is being designed to serve next-generation data-center loads directly, with generation and customers sharing the same site.",
+        "The campus plan includes a research facility for work in energy, materials and related technologies, located next to the generation that powers it. Research on the campus is planned to connect with its green technology program, including AAC building materials and the planned waste-to-nanocarbon process.",
+      ],
+    },
+    {
+      heading: "Industrial space",
+      paras: [
+        "Industrial space on the campus is planned for manufacturers and other large, continuous industrial users that need dependable power at scale.",
       ],
       bullets: [
         { title: "Power where you build", body: "Campus generation is planned to serve campus customers, reducing reliance on distant transmission." },
         { title: "Firm in the near term", body: "Planned natural gas generation, designed around GE turbine technology, is intended to provide around-the-clock supply." },
-        { title: "Greener over time", body: "Planned carbon capture now and advanced nuclear over the long term." },
-        { title: "Room to expand", body: "The campus is planned to add generation as customer demand grows." },
+        { title: "Infrastructure", body: "Power, water, gas, fiber and rail are planned for the site." },
+        { title: "Room to expand", body: "The campus is planned to add generation and space as customer demand grows." },
       ],
     },
     {
-      heading: "A green data center",
+      heading: "Green buildings",
       paras: [
-        "Data halls on the campus are planned to be built with insulating XBeton AAC block to reduce cooling demand, powered on site, and supported by planned carbon capture and, over the long term, advanced nuclear.",
-      ],
-    },
-    {
-      heading: "Who it is for",
-      paras: [
-        "Hyperscale and enterprise data-center developers, AI computing operators, and other large, continuous industrial users that need dependable power at scale.",
+        "Research and industrial buildings on the campus are planned to be built with insulating XBeton AAC block to reduce heating and cooling demand, powered on site, and supported by planned carbon capture and, over the long term, advanced nuclear.",
       ],
     },
     {
       heading: "How to engage",
       paras: [
-        "Tell us about your load, timeline and site requirements. We will follow up to discuss how the campus can support your project.",
+        "Tell us about your project, power needs, timeline and space requirements. We will follow up to discuss how the campus can support you.",
       ],
     },
   ],
   related: [R.green, R.campus, R.gas],
   cta: {
-    title: "Planning a data center?",
-    body: "Email us your load requirements and timeline to start the conversation.",
+    title: "Looking for research or industrial space?",
+    body: "Email us your power needs and timeline to start the conversation.",
   },
+  footnote:
+    "The research facility and industrial space are planned and subject to design, permitting and change.",
 };
 
 export const GREEN: ServiceContent = {
@@ -272,10 +274,10 @@ export const GREEN: ServiceContent = {
   eyebrow: "Green Technology",
   title: "Green by design.",
   intro:
-    "Alania Energy is developing the Cedar City Energy Campus around green technology: green buildings, a green data center, and planned carbon capture and waste-to-nanocarbon processes designed to reduce carbon and lock it away.",
+    "Alania Energy is developing the Cedar City Energy Campus around green technology: green buildings with on-site power, and planned carbon capture and waste-to-nanocarbon processes designed to reduce carbon and lock it away.",
   points: [
     { title: "Green buildings", body: "Campus buildings planned with XBeton autoclaved aerated concrete (AAC) block." },
-    { title: "Green data center", body: "Data halls planned with AAC construction, on-site power and a greener energy mix." },
+    { title: "Green research & industry", body: "Research and industrial buildings planned with AAC construction and on-site power." },
     { title: "Carbon capture", body: "Natural gas generation planned with carbon capture to remove CO2 from exhaust." },
     { title: "Waste to nanocarbon", body: "A planned process that turns waste into nanocarbon locked into building materials." },
   ],
@@ -283,7 +285,7 @@ export const GREEN: ServiceContent = {
     {
       heading: "Green buildings",
       paras: [
-        "Campus buildings, including the data halls, are planned to be built with XBeton autoclaved aerated concrete (AAC) block. AAC is a lightweight, insulating masonry material: its air-filled structure helps keep buildings cooler in summer and warmer in winter, which reduces the energy needed for heating and cooling. It is also non-combustible.",
+        "Campus buildings, including the research facility and industrial space, are planned to be built with XBeton autoclaved aerated concrete (AAC) block. AAC is a lightweight, insulating masonry material: its air-filled structure helps keep buildings cooler in summer and warmer in winter, which reduces the energy needed for heating and cooling. It is also non-combustible.",
         "Alania Energy plans to pursue recognized green-building certification, such as LEED, for campus buildings as the design advances. The campus has not yet been certified.",
       ],
       bullets: [
@@ -294,14 +296,14 @@ export const GREEN: ServiceContent = {
       ],
     },
     {
-      heading: "A green data center",
+      heading: "Green research and industry",
       paras: [
-        "The campus is being designed as a green data center campus. Data halls are planned with AAC construction to reduce cooling demand, and power is planned to be generated on site, reducing reliance on long-distance transmission.",
+        "The research facility and industrial space are planned as green buildings. They are planned with AAC construction to reduce heating and cooling demand, and power is planned to be generated on site, reducing reliance on long-distance transmission.",
         "Over time, the energy mix is planned to become greener still: carbon capture on natural gas generation in the nearer term, and advanced nuclear as the long-term green power source.",
       ],
       bullets: [
-        { title: "Efficient shell", body: "Insulating AAC buildings to help reduce cooling energy." },
-        { title: "Power on site", body: "Generation planned next to the data halls it serves." },
+        { title: "Efficient shell", body: "Insulating AAC buildings to help reduce heating and cooling energy." },
+        { title: "Power on site", body: "Generation planned next to the buildings it serves." },
         { title: "Captured carbon", body: "Carbon capture planned on natural gas generation." },
         { title: "Green over time", body: "Advanced nuclear planned as the long-term power source." },
       ],
@@ -326,7 +328,7 @@ export const GREEN: ServiceContent = {
       ],
     },
   ],
-  related: [R.dc, R.campus, R.gas],
+  related: [R.ri, R.campus, R.gas],
   cta: {
     title: "Building something green?",
     body: "Talk with us about green power and green buildings for your project.",
